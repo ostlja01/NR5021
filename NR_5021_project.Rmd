@@ -25,7 +25,7 @@ animal <- msleep
 ##ggplot2
 First we will make several different plots using solely ggplot2 functions
 
-```{r}
+```{r ggplot}
 
 p <- ggplot(animal, aes(x = order, y = sleep_total)) + theme(axis.text.x = element_text(face = "italic", angle = 90, vjust = 0.5)) + geom_point() + aes(colour = log(bodywt))
 p 
