@@ -1,0 +1,38 @@
+---
+title: "NR_5021_project"
+authors: "Husain Agha, James Ostille, Clare Gietzel, Hannah Legatzke"
+date: "10/3/2018"
+output: html_document
+---
+
+#Better Know an R Package
+##R/Cowplot
+Cowplot is a package developed to work in tandem with R/ggplot2. From the cowplot cran page, "The cowplot package is a simple add-on to ggplot2. It is meant to provide a publication-ready theme for ggplot2, one that requires a minimum amount of fiddling with sizes of axis labels, plot backgrounds, etc."
+
+
+```{r library, message = FALSE}
+library(cowplot, tidyverse)
+```
+
+###Load in the data
+We are using a data set that is within R as well as a dataset collected from class responses.
+
+```{r data}
+animal <- msleep
+animal_grouped <- group_by(animal, genus)
+#class <- 
+```
+
+##ggplot2
+First we will make several different plots using solely ggplot2 functions
+
+```{r}
+
+p <- ggplot(animal, aes(x = name, y = sleep_total)) + theme(axis.text.x = element_text(angle = 70, vjust = 0.5)) + geom_point()
+p
+p2 <- ggplot(animal_grouped, aes(x = name, y = sleep_total)) + theme(axis.text.x = element_text(angle = 70, vjust = 0.5)) + geom_point(stat = "identity")
+p2
+
+
+
+```
