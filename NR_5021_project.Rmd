@@ -15,12 +15,11 @@ library(cowplot, tidyverse)
 ```
 
 ###Load in the data
-We are using a data set that is within R as well as a dataset collected from class responses.
+We are using a data set that is within ggplot2 as well as a dataset collected from class responses.
 
 ```{r data}
 animal <- msleep
-animal_grouped <- group_by(animal, genus)
-#class <- 
+#class <-  
 ```
 
 ##ggplot2
@@ -28,10 +27,9 @@ First we will make several different plots using solely ggplot2 functions
 
 ```{r}
 
-p <- ggplot(animal, aes(x = name, y = sleep_total)) + theme(axis.text.x = element_text(angle = 70, vjust = 0.5)) + geom_point()
-p
-p2 <- ggplot(animal_grouped, aes(x = name, y = sleep_total)) + theme(axis.text.x = element_text(angle = 70, vjust = 0.5)) + geom_point(stat = "identity")
-p2
+p <- ggplot(animal, aes(x = order, y = sleep_total)) + theme(axis.text.x = element_text(face = "italic", angle = 90, vjust = 0.5)) + geom_point() + aes(colour = log(bodywt))
+p 
+
 
 
 
